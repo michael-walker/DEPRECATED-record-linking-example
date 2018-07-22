@@ -7,6 +7,6 @@ FROM
 CREATE TABLE amazon_tokens AS
 select
 	id,
-    array_to_string((regexp_matches(tokens, '(\w+)', 'g')),'~',' ') as blocking_key
+    array_to_string((regexp_matches(tokens, '(\w+)\s(\w+)', 'g')),'~',' ') as blocking_key
 FROM
 	amazon_cleaned;
