@@ -1,7 +1,7 @@
 CREATE TABLE google_cleaned AS
 select
     id,
-    regexp_replace(regexp_replace(upper(title),' ',' ','g'),'\s+',' ','g') as tokens
+    regexp_replace(regexp_replace(upper(title),'[^A-Z0-9]+',' ','g'),'\s+',' ','g') as tokens
 FROM
     google;
 CREATE TABLE google_tokens AS

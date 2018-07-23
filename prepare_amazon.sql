@@ -1,7 +1,7 @@
 CREATE TABLE amazon_cleaned AS
 select
 	id,
-	regexp_replace(regexp_replace(upper(title),' ',' ','g'),'\s+',' ','g') as tokens
+	regexp_replace(regexp_replace(upper(title),'[^A-Z0-9]+',' ','g'),'\s+',' ','g') as tokens
 FROM
 	amazon;
 CREATE TABLE amazon_tokens AS
