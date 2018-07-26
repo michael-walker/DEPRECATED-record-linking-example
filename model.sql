@@ -13,7 +13,7 @@ on
 
 CREATE TABLE actual AS
 select
-	distinct(g_keys || '~' || a_keys) as keys
+	distinct(g_keys || ' ' || a_keys) as keys
 from
 	joined
 
